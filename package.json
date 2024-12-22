@@ -6,7 +6,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch .\\dist\\server.js"
+    "dev": "node --watch .\\dist\\server.js",
+    "prisma:studio": "npx prisma studio",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:generate": "npx prisma generate"
   },
   "keywords": [],
   "author": "",
@@ -14,10 +17,12 @@
   "devDependencies": {
     "@types/node": "^22.10.2",
     "dotenv": "^16.4.7",
+    "prisma": "^6.1.0",
     "typescript": "^5.7.2"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
+    "@prisma/client": "^6.1.0",
     "fastify": "^5.2.0",
     "postgres": "^3.4.5"
   }
