@@ -1,23 +1,15 @@
 import bcrypt from "bcrypt";
 
-async function encrypt(plain_password: string) {
-  const result = await bcrypt.hash(plain_password, 4);
+async function generate_hash(plain_password: string) {
+  const result = await bcrypt.hash(plain_password, 0);
   console.log(result);
-  return result;
 }
 
-async function compare(plain_password: string) {
-  const start = performance.now();
+generate_hash("admin");
 
-  const result = await bcrypt.compare(
-    plain_password,
-    await encrypt(plain_password)
-  );
-
-  const end = performance.now();
-  
-  console.log(result);
-  console.log(`Execution time: ${end - start} ms`);
+async function compare(plain_password:string, password_hash: string){
+  const result = await bcrypt.compare(plain_password, password_hash)
+  console.log(`A senha é: ${result ? "Verdadeira" : "Falsa"}`);
 }
 
-compare("admin");
+compare("admin","$2b$10$hoVYpHIloDBkwj4EMld5R.1lcc124YwWKcuvEI6FIwc41BDjl6yaq")
