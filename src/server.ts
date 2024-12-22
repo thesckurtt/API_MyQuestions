@@ -22,4 +22,10 @@ console.log();
 server.listen({
   host: "0.0.0.0",
   port: APLICATION_LISTENING_PORT
+}, (error, address)=>{
+  if(error){
+    console.log(error) 
+  }else{
+    console.log("\n Application in URL: " + address + "\n");
+  }
 });
