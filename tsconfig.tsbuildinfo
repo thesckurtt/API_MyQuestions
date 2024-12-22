@@ -1,1 +1,1 @@
-{"root":["./src/server.ts","./src/app/config/config.ts","./src/app/routes/dashboard.ts","./src/app/routes/public.ts"],"version":"5.7.2"}
+{"root":["./src/server.ts","./src/app/config/config.ts","./src/app/config/db_config.ts","./src/app/controllers/publiccontroller.ts","./src/app/migrations/create_table_questions.ts","./src/app/routes/dashboard.ts","./src/app/routes/public.ts"],"version":"5.7.2"}
