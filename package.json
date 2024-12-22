@@ -10,20 +10,24 @@
     "prisma:studio": "npx prisma studio",
     "prisma:migrate": "npx prisma migrate dev",
     "prisma:generate": "npx prisma generate",
-    "prisma:reset-migrate": "npx prisma migrate reset"
+    "prisma:reset-migrate": "npx prisma migrate reset",
+    "database:seed": "node .\\dist\\APP\\Database\\Seeders\\Database.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^22.10.2",
     "dotenv": "^16.4.7",
+    "lorem-ipsum": "^2.0.8",
     "prisma": "^6.1.0",
     "typescript": "^5.7.2"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
     "@prisma/client": "^6.1.0",
+    "bcrypt": "^5.1.1",
     "fastify": "^5.2.0",
     "postgres": "^3.4.5"
   }

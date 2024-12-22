@@ -10,3 +10,12 @@ export type QuestionType = {
   createdAt: Date;
   updatedAt: Date;
 };
+export type QuestionCrudType = {
+  title: string;
+  description?: string | null;
+  alternativeA: string;
+  alternativeB: string;
+  alternativeC: string;
+  alternativeD: string;
+  correctAlternative: string;
+};
