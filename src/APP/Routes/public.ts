@@ -1,9 +1,9 @@
-import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
+import { FastifyInstance} from "fastify";
 import { question } from "../Controllers/PublicController.js";
 /**
  * #### The public routes of API
  * @param fastify - FastifyInstance
  */
-export default async function publicRoutes(fastify: FastifyInstance) {
+export async function publicRoutes(fastify: FastifyInstance) {
   fastify.get("/question", question);
 }
