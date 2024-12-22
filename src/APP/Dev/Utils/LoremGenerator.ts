@@ -1,4 +1,8 @@
 import { loremIpsum } from "lorem-ipsum";
+import { faker } from "@faker-js/faker";
+import { UserCrudType } from "APP/Types/UserType";
+import bcrypt from "bcrypt";
+
 export class LoremGenerator {
   /**
    * ## Generate abstract phrase with lorem ipsum
@@ -17,8 +21,22 @@ export class LoremGenerator {
       units: "words", // paragraph(s), "sentence(s)", or "word(s)"
     });
 
-    return `${prefix ? prefix : ""}${phrase}${
-      suffix ? suffix : ""
-    }`;
+    return `${prefix ? prefix : ""}${phrase}${suffix ? suffix : ""}`;
+  }
+  /**
+   * ## Generate a fake user
+   * ---
+   * Generate a fake user with information of faaker.js
+   * @returns data based in UserCrudType
+   */
+  public static async LoremUser() {
+    const data: UserCrudType = {
+      name: faker.person.firstName(),
+      email: faker.internet.email(),
+      passwordHash: await bcrypt.hash("admin", 4),
+      isAdmin: true,
+    };
+
+    return data;
   }
 }
