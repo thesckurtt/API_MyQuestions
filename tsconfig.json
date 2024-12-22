@@ -13,7 +13,9 @@
     "baseUrl": ".", // Define o caminho base para a resolução de módulos
     "paths": {
       "*": ["node_modules/*", "src/*"] // Configurações adicionais para resolver módulos
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./src"],
+    "types": ["node", "fastify"]
   },
   "include": [
     "src/**/*.ts" // Inclui todos os arquivos TypeScript da pasta src

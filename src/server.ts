@@ -1,10 +1,11 @@
 import { fastify, FastifyRequest, FastifyReply } from "fastify";
 import dotenv from "dotenv";
 import { APLICATION_LISTENING_PORT, APP_DEBUG } from "./APP/Config/config.js";
-import { API_PREFIX_ROUTE } from "./APP/Routes/prefix_routes.js";
+import { API_PREFIX_ROUTE, DASHBOARD_API_ROUTE } from "./APP/Routes/prefix_routes.js";
 import { publicRoutes } from "./APP/Routes/public.js";
 import jwtPlugin from "@fastify/jwt";
 import { loginRoutes } from "./APP/Routes/logins.js";
+import { dashboardRoutes } from "./APP/Routes/dashboard.js";
 
 dotenv.config();
 
@@ -33,7 +34,14 @@ server.decorate(
 
 server.register(publicRoutes, { prefix: API_PREFIX_ROUTE });
 server.register(loginRoutes, { prefix: API_PREFIX_ROUTE });
+server.register(dashboardRoutes, {
+  preHandler: [server.authenticate], // Uso seguro do authenticate
+  prefix: DASHBOARD_API_ROUTE,
+});
 
+server.get("/protected", { preHandler: [server.authenticate] }, async (request, reply) => {
+  reply.send({ message: "This is a protected route" });
+});
 server.listen(
   {
     host: "0.0.0.0",

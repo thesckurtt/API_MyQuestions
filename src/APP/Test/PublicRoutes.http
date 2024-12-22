@@ -1,5 +1,7 @@
 GET http://localhost:8080/api/v1/question 
+
 ###
+
 POST http://localhost:8080/api/v1/login
 Content-Type: application/json
 
@@ -7,3 +9,13 @@ Content-Type: application/json
   "email":"Maverick43@yahoo.com",
   "password":"admin"
 }
+
+###
+GET http://localhost:8080/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTA1OTQsImV4cCI6MTczNDkxMTE5NH0.WLpau5p5GN066IJ1KWSD5UKZwVVgHeAASdPV5s8kDJw
+
+
+### 
+
+GET http://localhost:8080/dashboard/api/v1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTA1OTQsImV4cCI6MTczNDkxMTE5NH0.WLpau5p5GN066IJ1KWSD5UKZwVVgHeAASdPV5s8kDJw
