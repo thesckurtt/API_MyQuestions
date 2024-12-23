@@ -1,6 +1,5 @@
 import { FastifyRequest, FastifyReply } from "fastify";
 import { prisma } from "../Config/db_config.js";
-import { Console, error } from "console";
 
 interface QuestionInterface {
   id: string;
@@ -13,22 +12,6 @@ interface QuestionInterface {
   correctAlternative: string;
 }
 
-// interface ViewQuestionParamsInterface {
-//   id: string;
-// }
-// interface AddQuestionBodyInterface {
-//   title: string;
-//   description?: string;
-//   alternativeA: string;
-//   alternativeB: string;
-//   alternativeC: string;
-//   alternativeD: string;
-//   correctAlternative: string;
-// }
-// interface editQuestionInterface {
-//   id: string;
-// }
-
 export async function getAllQuestion(
   request: FastifyRequest,
   reply: FastifyReply
@@ -37,6 +20,7 @@ export async function getAllQuestion(
 
   return questions;
 }
+
 export async function viewQuestion(
   request: FastifyRequest<{ Params: QuestionInterface }>,
   reply: FastifyReply
