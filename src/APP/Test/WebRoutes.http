@@ -1,0 +1,68 @@
+GET https://api-myquestions.onrender.com/api/v1/question 
+
+# Login
+
+###
+
+POST https://api-myquestions.onrender.com/api/v1/login
+Content-Type: application/json
+
+{
+  "email":"Maverick43@yahoo.com",
+  "password":"admin"
+}
+
+
+###
+
+# protected route test
+GET https://api-myquestions.onrender.com/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTkxNzEsImV4cCI6MTczNDkyMTU3MX0.SZVHO9g4VbidrlsK7hDp2UnplRfWJkHNEWZO29H0FEw
+
+# Dashboard Routes
+
+### 
+
+GET https://api-myquestions.onrender.com/dashboard/api/v1/questions/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTkxNzEsImV4cCI6MTczNDkyMTU3MX0.SZVHO9g4VbidrlsK7hDp2UnplRfWJkHNEWZO29H0FEw
+### 
+
+GET https://api-myquestions.onrender.com/dashboard/api/v1/question/view/629e4674-7598-4bf3-879a-6c32fca2656d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTkxNzEsImV4cCI6MTczNDkyMTU3MX0.SZVHO9g4VbidrlsK7hDp2UnplRfWJkHNEWZO29H0FEw
+
+
+### 
+
+GET https://api-myquestions.onrender.com/dashboard/api/v1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTkxNzEsImV4cCI6MTczNDkyMTU3MX0.SZVHO9g4VbidrlsK7hDp2UnplRfWJkHNEWZO29H0FEw
+
+###
+
+POST https://api-myquestions.onrender.com/dashboard/api/v1/question/add
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTkxNzEsImV4cCI6MTczNDkyMTU3MX0.SZVHO9g4VbidrlsK7hDp2UnplRfWJkHNEWZO29H0FEw
+Content-Type: application/json
+
+{
+  "title":"Test title dadada",
+  "description":"desc",
+  "alternativeA":"dad",
+  "alternativeB":"fdsdfs",
+  "alternativeC":"frwerfsd",
+  "alternativeD":"fsf",
+  "correctAlternative":"a"
+}
+
+###
+
+PUT https://api-myquestions.onrender.com/dashboard/api/v1/question/edit/8d752bc0-d3e5-4003-bfe4-c5110f5ec516
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTkxNzEsImV4cCI6MTczNDkyMTU3MX0.SZVHO9g4VbidrlsK7hDp2UnplRfWJkHNEWZO29H0FEw
+Content-Type: application/json
+
+{
+  "title":"meu carrinho branco"
+}
+
+###
+
+DELETE  https://api-myquestions.onrender.com/dashboard/api/v1/question/delete/8d752bc0-d3e5-4003-bfe4-c5110f5ec516
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTkxNzEsImV4cCI6MTczNDkyMTU3MX0.SZVHO9g4VbidrlsK7hDp2UnplRfWJkHNEWZO29H0FEw
