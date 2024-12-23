@@ -10,12 +10,37 @@ Content-Type: application/json
   "password":"admin"
 }
 
+# Test ->
+
 ###
 GET http://localhost:8080/protected
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTA1OTQsImV4cCI6MTczNDkxMTE5NH0.WLpau5p5GN066IJ1KWSD5UKZwVVgHeAASdPV5s8kDJw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTMyNTksImV4cCI6MTczNDkxNTY1OX0.LeWOVC3urSda_0b0kVD8cM6KJirZ8hVlaQVDkGBAgPQ
+
+# Dashboard Routes
+
+### 
+
+GET http://localhost:8080/dashboard/api/v1/question/view/1ca268b1-02da-4ab9-81c3-6bf7913687ec
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTMyNTksImV4cCI6MTczNDkxNTY1OX0.LeWOVC3urSda_0b0kVD8cM6KJirZ8hVlaQVDkGBAgPQ
 
 
 ### 
 
 GET http://localhost:8080/dashboard/api/v1/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTA1OTQsImV4cCI6MTczNDkxMTE5NH0.WLpau5p5GN066IJ1KWSD5UKZwVVgHeAASdPV5s8kDJw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTMyNTksImV4cCI6MTczNDkxNTY1OX0.LeWOVC3urSda_0b0kVD8cM6KJirZ8hVlaQVDkGBAgPQ
+
+###
+
+POST http://localhost:8080/dashboard/api/v1/question/add
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTMyNTksImV4cCI6MTczNDkxNTY1OX0.LeWOVC3urSda_0b0kVD8cM6KJirZ8hVlaQVDkGBAgPQ
+
+###
+
+PUT http://localhost:8080/dashboard/api/v1/question/edit/id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTMyNTksImV4cCI6MTczNDkxNTY1OX0.LeWOVC3urSda_0b0kVD8cM6KJirZ8hVlaQVDkGBAgPQ
+
+
+###
+
+DELETE  http://localhost:8080/dashboard/api/v1/question/delete/id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRGFtb24iLCJpYXQiOjE3MzQ5MTMyNTksImV4cCI6MTczNDkxNTY1OX0.LeWOVC3urSda_0b0kVD8cM6KJirZ8hVlaQVDkGBAgPQ

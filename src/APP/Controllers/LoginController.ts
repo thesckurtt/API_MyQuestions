@@ -36,7 +36,7 @@ export async function postLogin(
     );
 
     if (user && isValidPassword) {
-      const token = server.jwt.sign({ name: user.name }, { expiresIn: "10m" });
+      const token = server.jwt.sign({ name: user.name }, { expiresIn: "40m" });
       return { token };
     }
 
