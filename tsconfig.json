@@ -12,7 +12,10 @@
     "forceConsistentCasingInFileNames": true, // Garante que as importações de arquivos sigam a mesma capitalização
     "baseUrl": ".", // Define o caminho base para a resolução de módulos
     "paths": {
-      "*": ["node_modules/*", "src/*"] // Configurações adicionais para resolver módulos
+      "*": [
+        "node_modules/*",
+        "src/*"
+      ] // Configurações adicionais para resolver módulos
     },
     // "typeRoots": ["./node_modules/@types", "./src"],
     // "types": ["node", "fastify"]
